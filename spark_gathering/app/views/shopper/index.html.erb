@@ -1,2 +1,20 @@
-<h1>Shopper#index</h1>
-<p>Find me in app/views/shopper/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Product Catalog</h1>
+
+<table>
+  <tbody class="entry">
+    <% @products.each do |product| %>
+      <tr>
+        <td><%=image_tag(product.image, height:'250', width:'250')%></td>
+        <td>
+          <h2><%=product.name%></h2>
+          <p><%=product.description%></p>
+          <div>
+            <p class="price_line"><span class="price">$<%=product.price%></span></p>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

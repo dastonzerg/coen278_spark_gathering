@@ -9,7 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="products">
+  <body class="<%=controller.controller_name%>">
+    <div class="topnav">
+      <a class="active topnav_a_l" href="/">Home</a>
+      <a class="topnav_a_l" href="/products">Booster Box</a>
+      <%=image_tag("magic_logo.png", class: "logo_r")%>
+      <span class="topnav_a_r" href="">Spark Gathering</span>
+    </div>
     <%= yield %>
   </body>
 </html>
