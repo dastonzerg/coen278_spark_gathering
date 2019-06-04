@@ -10,8 +10,11 @@
         <td>
           <h2><%=product.name%></h2>
           <p><%=product.description%></p>
-          <div>
+          <div class="button">
             <p class="price_line"><span class="price">$<%=product.price%></span></p>
+          </div>
+          <div class="button">
+            <%= button_to 'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart' %>
           </div>
         </td>
       </tr>

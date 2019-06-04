@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Items in your shopping cart</h3>
+
+<table>
+  <%@cart.lineitems.each do |item|%>
+  <tr>
+    <td><%=item.product.name%></td>
+    <td><%=item.product.price%></td>
+  </tr>
+  <%end%>
+</table>
+<%=button_to "Empty Cart", @cart, method: :delete, data: {confirm: "are u sure?"}%>
