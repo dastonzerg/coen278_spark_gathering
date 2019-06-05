@@ -9,8 +9,8 @@
   </tr>
   <%end%>
   <tr>
-    <td colspan="2">Total</td>
-    <td><%=number_to_currency(@cart.total_price)%></td>
+    <td>Total</td>
+    <td colspan="2"><%=number_to_currency(@cart.total_price)%></td>
   </tr>
 </table>
 <%=button_to "Empty Cart", @cart, method: :delete, data: {confirm: "Are you sure?"}%>

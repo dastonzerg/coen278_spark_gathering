@@ -14,7 +14,7 @@
             <p class="price_line"><span class="price">$<%=product.price%></span></p>
           </div>
           <div class="button">
-            <%= button_to 'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart' %>
+            <%= button_to 'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart', remote:true %>
           </div>
         </td>
       </tr>
@@ -22,6 +22,6 @@
   </tbody>
 </table>
 </div>
-<div class="sidenav">
+<div id="cart" class="sidenav">
   <%=render @cart%>
 </div>
