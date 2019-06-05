@@ -22,6 +22,7 @@
  body {
    font-family: 'Beleren';
    background-color: #d9d9d9;
+   margin: 0px;
  }
 
  .topnav {
@@ -47,7 +48,7 @@
    font-size: 17px;
  }
 
- .logo {
+ .title_r {
    float: right;
    color: #ffbf80;
    text-align: center;
@@ -69,8 +70,8 @@
  .logo_r {
    float: right;
    margin-right: 20px;
-   height: 10%;
-   width: 10%;
+   height: 9%;
+   width: 9%;
  }
 
  .home_welcome {

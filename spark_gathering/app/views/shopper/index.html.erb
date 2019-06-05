@@ -1,7 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="notice_center"><%= notice %></p>
 
+<div class="main">
 <h1>Product Catalog</h1>
-
 <table>
   <tbody class="entry">
     <% @products.each do |product| %>
@@ -21,3 +21,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
+<div class="sidenav">
+  <%=render @cart%>
+</div>
