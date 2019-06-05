@@ -17,9 +17,9 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if @cart.lineitems.empty?
-      redirect_to shopper_url, notice: "your cart is empty"
+      redirect_to shopper_index_url, notice: "your cart is empty"
       return
-    end  
+    end
     @order = Order.new
   end
 
