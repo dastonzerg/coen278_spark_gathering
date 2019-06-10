@@ -2,13 +2,16 @@
 
 <div class="main">
 <h1>Product Catalog</h1>
+<br>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" size="30">
+<br><br>
 <table>
-  <tbody class="entry">
+  <tbody id="myTable" class="entry">
     <% @products.each do |product| %>
       <tr>
         <td><%=image_tag(product.image, height:'250', width:'250')%></td>
         <td>
-          <h2><%=product.name%></h2>
+          <h2 id="name"><%=product.name%></h2>
           <p><%=product.description%></p>
           <div class="button">
             <p class="price_line"><span class="price">$<%=product.price%></span></p>
@@ -23,13 +26,29 @@
 </table>
 </div>
 <div id="cart" class="sidenav">
-  <%=render @cart%>
-  <% if session[:user_id] %>
-    <ul>
-      <li><%= link_to 'Orders', orders_path %></li>
-      <li><%= link_to 'Products', products_path %></li>
-      <li><%= link_to 'Users', users_path %></li>
-    </ul>
-    <%= button_to 'Logout', logout_path, method: :delete%>
-  <%end%>  
+	<div id="cart">
+		<%=render @cart%>
+	</div>
 </div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1].getElementsByTagName("h2");
+		console.log(td)
+    if (td) {
+			txtValue = td["name"].innerHTML
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>

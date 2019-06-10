@@ -15,3 +15,17 @@
 </table>
 <%=button_to "Empty Cart", @cart, method: :delete, data: {confirm: "Are you sure?"}%>
 <%= button_to "Check Out", new_order_path, method: :get %>
+<ul>
+	<li><a href="https://magic.wizards.com/en/mtgarena">Home</a></li>
+	<li><a href="https://magic.wizards.com/en/products/card-set-archive">Archive</a></li>
+	<li><a href="https://magic.wizards.com/en/new-to-magic?B=">New To Magic</a></li>
+	<li><a href="https://www.wizards.com/magic/planeswalkerpoints">Planewalker Points</a></li>
+</ul>
+<% if session[:user_id] %>
+	<ul>
+		<li><%= link_to 'Orders', orders_path %></li>
+		<li><%= link_to 'Products', products_path %></li>
+		<li><%= link_to 'Users', users_path %></li>
+	</ul>
+	<%= button_to 'Logout', logout_path, method: :delete%>
+<%end%>

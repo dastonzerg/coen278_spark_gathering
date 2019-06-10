@@ -22,7 +22,11 @@
       <a class="topnav_a_r" href="">Shopping Cart</a>
       <%end%>
       <a class="topnav_a_r" href="/admin">Admin</a>
+			<%if !session[:user_id]%>
       <a class="active topnav_a_r" href="/login">Login</a>
+			<%else%>
+			<a class="active topnav_a_r" href="/logout">Logout</a>
+			<%end%>
       <a class="topnav_a_r" href="/users">Users</a>
     </div>
     <%= yield %>

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'access/new'
-  get 'access/create'
   get 'access/destroy'
   get 'admin/index'
   resources :users
@@ -13,7 +12,8 @@ Rails.application.routes.draw do
   root :to=>'home#index'
   get 'admin', to: 'admin#index'
   get 'login', to: 'access#new'
-  get 'logout', to: 'access#destroy'
-  post '/access/new', to: 'access#create'
+  delete 'logout', to: 'access#destroy'
+	get 'logout', to: 'access#destroy'
+  post 'access/new', to: 'access#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

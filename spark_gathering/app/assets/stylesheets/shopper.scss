@@ -38,9 +38,9 @@
 
   /* The navigation menu links */
   .sidenav a {
-    padding: 6px 6px 6px 16px;
+		font-family: 'Beleren';
     text-decoration: none;
-    font-size: 25px;
+    font-size: 15px;
     color: #818181;
     display: block;
   }
@@ -65,4 +65,8 @@
   .notice_center {
     text-align: center;
   }
+
+	#myInput {
+		font-size: 18px;
+	}
 }
